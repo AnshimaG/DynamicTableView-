@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A14258A7422008BA776 /* AppDelegate.swift */; };
 		BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A16258A7422008BA776 /* SceneDelegate.swift */; };
-		BCEF5A19258A7422008BA776 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A18258A7422008BA776 /* ViewController.swift */; };
-		BCEF5A1C258A7422008BA776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1A258A7422008BA776 /* Main.storyboard */; };
 		BCEF5A1E258A7424008BA776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1D258A7424008BA776 /* Assets.xcassets */; };
 		BCEF5A21258A7424008BA776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1F258A7424008BA776 /* LaunchScreen.storyboard */; };
 		BCEF5A2C258A7425008BA776 /* DynamicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */; };
+		BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A37258A7802008BA776 /* FactsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,14 +29,13 @@
 		BCEF5A11258A7422008BA776 /* DynamicTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF5A14258A7422008BA776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEF5A16258A7422008BA776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCEF5A18258A7422008BA776 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BCEF5A1B258A7422008BA776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCEF5A1D258A7424008BA776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCEF5A20258A7424008BA776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCEF5A22258A7424008BA776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCEF5A27258A7425008BA776 /* DynamicTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableTests.swift; sourceTree = "<group>"; };
 		BCEF5A2D258A7425008BA776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCEF5A37258A7802008BA776 /* FactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +77,9 @@
 		BCEF5A13258A7422008BA776 /* DynamicTable */ = {
 			isa = PBXGroup;
 			children = (
+				BCEF5A36258A77E6008BA776 /* Controllers */,
 				BCEF5A14258A7422008BA776 /* AppDelegate.swift */,
 				BCEF5A16258A7422008BA776 /* SceneDelegate.swift */,
-				BCEF5A18258A7422008BA776 /* ViewController.swift */,
-				BCEF5A1A258A7422008BA776 /* Main.storyboard */,
 				BCEF5A1D258A7424008BA776 /* Assets.xcassets */,
 				BCEF5A1F258A7424008BA776 /* LaunchScreen.storyboard */,
 				BCEF5A22258A7424008BA776 /* Info.plist */,
@@ -97,6 +94,14 @@
 				BCEF5A2D258A7425008BA776 /* Info.plist */,
 			);
 			path = DynamicTableTests;
+			sourceTree = "<group>";
+		};
+		BCEF5A36258A77E6008BA776 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF5A37258A7802008BA776 /* FactsListViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +187,6 @@
 			files = (
 				BCEF5A21258A7424008BA776 /* LaunchScreen.storyboard in Resources */,
 				BCEF5A1E258A7424008BA776 /* Assets.xcassets in Resources */,
-				BCEF5A1C258A7422008BA776 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCEF5A19258A7422008BA776 /* ViewController.swift in Sources */,
+				BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */,
 				BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */,
 				BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */,
 			);
@@ -225,14 +229,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BCEF5A1A258A7422008BA776 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCEF5A1B258A7422008BA776 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BCEF5A1F258A7424008BA776 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DynamicTable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +378,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DynamicTable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

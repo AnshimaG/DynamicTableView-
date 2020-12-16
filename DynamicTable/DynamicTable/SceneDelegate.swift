@@ -7,6 +7,8 @@
 //
 
 import UIKit
+// Available only for iOS >13.0
+@available(iOS 13.0, *)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,9 +16,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        // Assigning rootview controller  as FactsListViewController on navigation controller and adding as root to UIWindow
+        let windowScene:UIWindowScene = scene as! UIWindowScene;
+        let navController = UINavigationController(rootViewController: FactsListViewController())
+       // Create the UIWindow variable use above UIWindowScene variable.
+       self.window = UIWindow(windowScene: windowScene)
+       // Set this scene's window's background color.
+       self.window!.backgroundColor = UIColor.white
+       self.window!.rootViewController =  navController
+       // Make this scene's window be visible.
+       self.window!.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
