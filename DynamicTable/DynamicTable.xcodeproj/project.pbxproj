@@ -13,6 +13,9 @@
 		BCEF5A21258A7424008BA776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1F258A7424008BA776 /* LaunchScreen.storyboard */; };
 		BCEF5A2C258A7425008BA776 /* DynamicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */; };
 		BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A37258A7802008BA776 /* FactsListViewController.swift */; };
+		BCEF5A3B258A79F8008BA776 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3A258A79F8008BA776 /* FactsModel.swift */; };
+		BCEF5A3E258A7B58008BA776 /* FactsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */; };
+		BCEF5A40258A8049008BA776 /* FactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3F258A8049008BA776 /* FactCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableTests.swift; sourceTree = "<group>"; };
 		BCEF5A2D258A7425008BA776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCEF5A37258A7802008BA776 /* FactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListViewController.swift; sourceTree = "<group>"; };
+		BCEF5A3A258A79F8008BA776 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
+		BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListTableViewCell.swift; sourceTree = "<group>"; };
+		BCEF5A3F258A8049008BA776 /* FactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +83,9 @@
 		BCEF5A13258A7422008BA776 /* DynamicTable */ = {
 			isa = PBXGroup;
 			children = (
+				BCEF5A41258A8075008BA776 /* Common Utils  */,
+				BCEF5A3C258A7B34008BA776 /* Views */,
+				BCEF5A39258A79C8008BA776 /* Model */,
 				BCEF5A36258A77E6008BA776 /* Controllers */,
 				BCEF5A14258A7422008BA776 /* AppDelegate.swift */,
 				BCEF5A16258A7422008BA776 /* SceneDelegate.swift */,
@@ -102,6 +111,30 @@
 				BCEF5A37258A7802008BA776 /* FactsListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BCEF5A39258A79C8008BA776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF5A3A258A79F8008BA776 /* FactsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCEF5A3C258A7B34008BA776 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */,
+				BCEF5A3F258A8049008BA776 /* FactCellView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCEF5A41258A8075008BA776 /* Common Utils  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Common Utils ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEF5A3E258A7B58008BA776 /* FactsListTableViewCell.swift in Sources */,
 				BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */,
+				BCEF5A3B258A79F8008BA776 /* FactsModel.swift in Sources */,
 				BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */,
+				BCEF5A40258A8049008BA776 /* FactCellView.swift in Sources */,
 				BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
