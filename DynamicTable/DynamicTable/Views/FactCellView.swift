@@ -70,7 +70,7 @@ final class FactCellView: UIView {
          setupConstraints()
     }
     
-    // setup constraints
+    // Add constraints
    private func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 70),

@@ -16,6 +16,9 @@
 		BCEF5A3B258A79F8008BA776 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3A258A79F8008BA776 /* FactsModel.swift */; };
 		BCEF5A3E258A7B58008BA776 /* FactsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */; };
 		BCEF5A40258A8049008BA776 /* FactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3F258A8049008BA776 /* FactCellView.swift */; };
+		BCEF5A44258A83D5008BA776 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A43258A83D5008BA776 /* ApiClient.swift */; };
+		BCEF5A46258A8980008BA776 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A45258A8980008BA776 /* Constants.swift */; };
+		BCEF5A49258A8F74008BA776 /* FactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A48258A8F74008BA776 /* FactsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		BCEF5A3A258A79F8008BA776 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
 		BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListTableViewCell.swift; sourceTree = "<group>"; };
 		BCEF5A3F258A8049008BA776 /* FactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCellView.swift; sourceTree = "<group>"; };
+		BCEF5A43258A83D5008BA776 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		BCEF5A45258A8980008BA776 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BCEF5A48258A8F74008BA776 /* FactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 		BCEF5A13258A7422008BA776 /* DynamicTable */ = {
 			isa = PBXGroup;
 			children = (
+				BCEF5A47258A8F3F008BA776 /* ViewModel */,
+				BCEF5A42258A8392008BA776 /* Networking */,
 				BCEF5A41258A8075008BA776 /* Common Utils  */,
 				BCEF5A3C258A7B34008BA776 /* Views */,
 				BCEF5A39258A79C8008BA776 /* Model */,
@@ -133,8 +141,25 @@
 		BCEF5A41258A8075008BA776 /* Common Utils  */ = {
 			isa = PBXGroup;
 			children = (
+				BCEF5A45258A8980008BA776 /* Constants.swift */,
 			);
 			path = "Common Utils ";
+			sourceTree = "<group>";
+		};
+		BCEF5A42258A8392008BA776 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF5A43258A83D5008BA776 /* ApiClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		BCEF5A47258A8F3F008BA776 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF5A48258A8F74008BA776 /* FactsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,10 +264,13 @@
 			files = (
 				BCEF5A3E258A7B58008BA776 /* FactsListTableViewCell.swift in Sources */,
 				BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */,
+				BCEF5A44258A83D5008BA776 /* ApiClient.swift in Sources */,
+				BCEF5A49258A8F74008BA776 /* FactsViewModel.swift in Sources */,
 				BCEF5A3B258A79F8008BA776 /* FactsModel.swift in Sources */,
 				BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */,
 				BCEF5A40258A8049008BA776 /* FactCellView.swift in Sources */,
 				BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */,
+				BCEF5A46258A8980008BA776 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
