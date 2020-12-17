@@ -10,7 +10,9 @@ import UIKit
 
 class FactsListViewController: UIViewController {
    private var viewModel: FactsViewModel!
-   private var FactsModel: FactModel!
+   private var factsModel: FactModel!
+   private var refreshControl: UIRefreshControl?
+
 
 
 //MARK: Setup UI Components
@@ -25,15 +27,39 @@ class FactsListViewController: UIViewController {
         return tableView
     }()
     
+    lazy var messageLabel : UILabel = {
+      let label = UILabel()
+      label.textColor = .gray
+      label.font = UIFont(name: Font.regular, size: 18)
+      label.textAlignment = .center
+      label.numberOfLines = 0
+      label.sizeToFit()
+      return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpFactsTable()
+        setUpRrefreshControl()
+        setUpEmptyOrErrorLabel()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel = FactsViewModel(delegate: self)
-        viewModel.getFactsData()
+        checkNetworkConnectivity()
+        // Set the navigation Title
+        viewModel.updateNavigationTitle = {[weak self] () in
+            guard let self = self else { return }
+            self.navigationItem.title = self.viewModel.navTitle
+        }
+        
+        //hide  refreshControl, when response is received
+        viewModel.updateRefreshControl = { [weak self] () in
+          guard let self = self, let refreshControl = self.refreshControl else { return }
+          refreshControl.endRefreshing()
+        }
         
     }
     
@@ -46,16 +72,45 @@ class FactsListViewController: UIViewController {
         factsTable.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         factsTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         factsTable.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        factsTable.refreshControl = refreshControl
+
 
     }
     
+    private func setUpEmptyOrErrorLabel() {
+        factsTable.backgroundView = messageLabel
+        messageLabel.text = Message.initialLoading
+    }
+    private func setUpRrefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refreshData(_:)), for: .valueChanged)
+        refreshControl?.attributedTitle = NSAttributedString(string: Message.pullToRefresh)
+        factsTable.refreshControl = refreshControl
+    }
+    
+    @objc func refreshData(_ refreshControl: UIRefreshControl) {
+        checkNetworkConnectivity()
+    }
+    
+    func checkNetworkConnectivity() {
+        let status = Reach().connectionStatus()
+    
+        switch status {
+        case .unknown, .offline:
+           factsTable.backgroundView = messageLabel
+           messageLabel.text = Message.internetConnectivity
+        default:
+            viewModel.getFactsData()
+        }
+
+    }
 
 }
 
 extension FactsListViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return FactsModel?.facts?.count ?? 0
+    return factsModel?.facts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,6 +118,8 @@ extension FactsListViewController : UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FactsCell", for: indexPath) as! FactsListTableViewCell
         cell.layoutMargins = UIEdgeInsets.zero
         cell.selectionStyle = .none
+        cell.facts = factsModel?.facts?[indexPath.row]
+
         return cell
     }
 }
@@ -74,13 +131,15 @@ extension FactsListViewController: DataFetchProtocol {
     /// - Parameter result: Fact Model  class object is returned
     
     func onDataFetchSuccessfullyCompleted(with result: FactModel) {
-        FactsModel = result
+        factsModel = result
         factsTable.reloadData()
     }
     
     /// Callback when api is failed
     /// - Parameter reason: error message iin String format
     func onDataFetchFailed(with reason: String) {
+        factsTable.backgroundView = messageLabel
+        messageLabel.text = reason
         
     }
   

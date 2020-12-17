@@ -19,14 +19,15 @@ struct ApiClient{
             completion( Result.failure(NetworkError.invalidUrl))
                     return
         }
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            guard (response as? HTTPURLResponse) != nil  else {
+                completion(Result.failure(.internetUnavailabilityError))
+              return
+            }
             guard let data = data, error == nil else {
-                if let error = error as NSError?, error.domain == NSURLErrorDomain {
-                    print(error)
-
-                    completion(.failure(.domainError))
-                    
-                }
+                    completion(.failure(.dataFetchError))
                 return
             }
             guard let dataString = String(data: data, encoding: String.Encoding.isoLatin1) else { return }

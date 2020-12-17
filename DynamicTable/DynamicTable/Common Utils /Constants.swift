@@ -13,11 +13,42 @@ struct ApiEndPoints{
     
 }
 
+enum Font {
+  static let neue     = "Helvetica Neue"
+  static let medium   = "HelveticaNeue-Medium"
+  static let regular  = "HelveticaNeue-Regular"
+}
+
+enum Size {
+  static let image = (width: Float(120), height: Float(120))
+}
+
+enum Message {
+  static let initialLoading = "Please wait..."
+  static let pullToRefresh = "Fetching"
+  static let internetConnectivity = "Please check your internet connection"
+}
+
+//Error Handling
+
 enum NetworkError : Error {
     case internetUnavailabilityError
     case decodingError
-    case dataNotFound
     case invalidUrl
-    case domainError
-
+    case dataFetchError
+    
+    
+    var reason: String {
+    switch self {
+    case .internetUnavailabilityError:
+      return "No Internet connection, \n Please check connectivity"
+    case .decodingError:
+      return "An error occurred while decoding data \n Please try again"
+    case .invalidUrl:
+      return "invalid url"
+    case .dataFetchError:
+        return "Error while fetching data"
+        }
+ }
 }
+

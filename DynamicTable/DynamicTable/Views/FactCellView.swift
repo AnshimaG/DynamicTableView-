@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class FactCellView: UIView {
     
@@ -94,3 +95,30 @@ final class FactCellView: UIView {
       }
 
 }
+
+extension FactCellView {
+     func setImage(imageUrl: String?, placeHolder: String) {
+       DispatchQueue.global().async { [weak self] in
+         guard let self  = self else { return }
+         self.imageView.sd_setImage(with: URL(string: imageUrl ?? ""), placeholderImage: UIImage(named: "placeholder"))
+       }
+     }
+     
+     var titleText: String? {
+       get {
+         return titleLabel.text
+       }
+       set {
+         titleLabel.text = newValue
+       }
+     }
+     
+     var descriptionText: String? {
+       get {
+         return descriptionLabel.text
+       }
+       set {
+         descriptionLabel.text = newValue
+       }
+     }
+   }

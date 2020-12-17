@@ -29,6 +29,13 @@ enum CodingKeys : String, CodingKey {
          case heading = "title"
          case facts = "rows"
     }
+    
+     init(title: String, facts: [Facts]) {
+      self.heading = title
+      self.facts = facts
+    }
+    
+    
 init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: CodingKeys.self)
             facts = try values.decodeIfPresent([Facts].self, forKey: .facts)
@@ -50,10 +57,10 @@ struct Facts : Codable {
   }
  init(from decoder: Decoder) throws {
      let values = try decoder.container(keyedBy: CodingKeys.self)
-  //   title = try values.decodeIfPresent(String.self, forKey: .title)
-        //   description = try values.decodeIfPresent(String.self, forKey: .description)
-   //  imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
-    if let title =  try values.decodeIfPresent(String.self, forKey: .title) {
+     title = try values.decodeIfPresent(String.self, forKey: .title)
+     description = try values.decodeIfPresent(String.self, forKey: .description)
+     imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
+   /* if let title =  try values.decodeIfPresent(String.self, forKey: .title) {
         self.title = title
     }else {
         self.title = ""
@@ -67,6 +74,6 @@ struct Facts : Codable {
         self.imageUrl = imgUrl
     }else {
         self.imageUrl = ""
-    }
+    }*/
   }
 }

@@ -31,5 +31,16 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 required init?(coder aDecoder: NSCoder) {
   fatalError("init(coder:) has not been implemented")
 }
+    
+var facts: Facts? {
+  didSet {
+    guard let facts = facts else {
+      return
+    }
+    factView.titleText = facts.title
+    factView.descriptionText = facts.description
+    factView.setImage(imageUrl: facts.imageUrl, placeHolder: "placeholder")
+  }
+}
 
 }
