@@ -28,15 +28,19 @@ class FactsViewModel  {
         updateNavigationTitle?()
       }
     }
+    
+}
+    
     //MARK: - View Model to API Client
     
+extension FactsViewModel {
+        
     /// This method  calls the api func available in ApiClient class  to fetch data data from api and binds it back to controller class
     func getFactsData()  {
         ApiClient().fetchData(url: ApiEndPoints.factApiUrl) { [weak self](response:Result<FactModel,NetworkError>) in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
+                guard let self = self else { return }
+                DispatchQueue.main.async {
                 self.updateRefreshControl?()
-
                 switch response{
                    case .success(let factsList):
                         print(factsList)
@@ -45,21 +49,21 @@ class FactsViewModel  {
                         self.delegate?.onDataFetchSuccessfullyCompleted(with: processedResult)
                     case .failure(let err):
                         self.delegate?.onDataFetchFailed(with: err.reason)
-                   }
+                }
             }
-
-           }}
+           }
+    }
 
     /// Check for nil values available in  api response
     /// - Parameter result: Factmodel object
     /// - Returns: [Fatcts ] after nil values removal
+        
     func checkForNilValues(result: FactModel) -> FactModel {
-      let pageHeading = result.heading ?? ""
-      guard let facts = result.facts else { return result }
-        let filteredFacts = facts.filter({ $0.title != nil })
-      return FactModel(title: pageHeading, facts: filteredFacts)
+            let pageHeading = result.heading ?? ""
+            guard let facts = result.facts else { return result }
+            let filteredFacts = facts.filter({ $0.title != nil })
+            return FactModel(title: pageHeading, facts: filteredFacts)
     }
 
-
-    }
    
+}

@@ -9,18 +9,18 @@
 import UIKit
 
 class FactsListViewController: UIViewController {
-   private var viewModel: FactsViewModel!
-   private var factsModel: FactModel!
-   private var refreshControl: UIRefreshControl?
+   var viewModel: FactsViewModel!
+   var factsModel: FactModel!
+   var refreshControl: UIRefreshControl?
 
 
 
 //MARK: Setup UI Components
     
-    private lazy var factsTable : UITableView = {
+     lazy var factsTable : UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.estimatedRowHeight = 10
+        tableView.estimatedRowHeight = CGFloat(Height.factTableEstimated)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView(frame: .zero)
 

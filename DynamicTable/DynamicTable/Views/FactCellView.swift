@@ -15,7 +15,7 @@ final class FactCellView: UIView {
     private lazy var titleLabel : UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont(name: Font.medium, size: 15.0)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -25,7 +25,7 @@ final class FactCellView: UIView {
     private lazy var descriptionLabel : UILabel = {
       let label = UILabel()
       label.textColor = .gray
-      label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont(name: Font.neue, size: 15.0)
       label.textAlignment = .left
       label.numberOfLines = 0
       label.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,7 @@ final class FactCellView: UIView {
     private lazy var verticalTextStackView : UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.titleLabel, self.descriptionLabel])
         stackView.axis = .vertical
-        stackView.spacing = 8.0
+        stackView.spacing = CGFloat(Height.margin)
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +58,7 @@ final class FactCellView: UIView {
         arrangedSubviews: [self.imageView, self.verticalTextStackView]
       )
       stackView.axis = .horizontal
-      stackView.spacing = 2 * 8
+        stackView.spacing = CGFloat(2 * Height.margin)
       stackView.alignment = .top
       stackView.distribution = .fill
       stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,8 +74,8 @@ final class FactCellView: UIView {
     // Add constraints
    private func setupConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 70),
-            imageView.heightAnchor.constraint(equalToConstant: 70),
+            imageView.widthAnchor.constraint(equalToConstant: CGFloat(Size.image.width)),
+            imageView.heightAnchor.constraint(equalToConstant: CGFloat(Size.image.height)),
             stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),

@@ -29,6 +29,12 @@ enum Message {
   static let internetConnectivity = "Please check your internet connection"
 }
 
+enum Height {
+  static let factTableEstimated: Float = 100
+  static let factTableCellMinimum: Float = 100
+  static let margin: Float = 8
+}
+
 //Error Handling
 
 enum NetworkError : Error {

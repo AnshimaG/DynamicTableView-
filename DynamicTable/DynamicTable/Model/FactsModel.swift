@@ -20,7 +20,7 @@ import Foundation
     ]
 }*/
 
-struct FactModel : Codable{
+struct FactModel : Codable {
     
   let heading : String?
   var facts : [Facts]?
@@ -55,25 +55,17 @@ struct Facts : Codable {
      case description
      case imageUrl = "imageHref"
   }
+    
+    init(title:String, description: String, imageUrl:String) {
+        self.title = title
+        self.description = description
+        self.imageUrl = imageUrl
+    }
+    
  init(from decoder: Decoder) throws {
      let values = try decoder.container(keyedBy: CodingKeys.self)
      title = try values.decodeIfPresent(String.self, forKey: .title)
      description = try values.decodeIfPresent(String.self, forKey: .description)
      imageUrl = try values.decodeIfPresent(String.self, forKey: .imageUrl)
-   /* if let title =  try values.decodeIfPresent(String.self, forKey: .title) {
-        self.title = title
-    }else {
-        self.title = ""
-    }
-    if let description =  try values.decodeIfPresent(String.self, forKey: .description) {
-        self.description = description
-    }else {
-        self.description = ""
-    }
-    if let imgUrl =  try values.decodeIfPresent(String.self, forKey: .imageUrl) {
-        self.imageUrl = imgUrl
-    }else {
-        self.imageUrl = ""
-    }*/
   }
 }

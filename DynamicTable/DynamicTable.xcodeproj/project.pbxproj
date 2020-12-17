@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		269F59EDF6136CE7FA598A26 /* Pods_DynamicTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FBFDA26F4A5338C246CB5A /* Pods_DynamicTableTests.framework */; };
 		BC15AEFE258B755C00A75C75 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15AEFD258B755C00A75C75 /* Reach.swift */; };
+		BC15AF01258B8B5B00A75C75 /* FactSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */; };
+		BC15AF0B258BBE5A00A75C75 /* FactListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */; };
 		BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A14258A7422008BA776 /* AppDelegate.swift */; };
 		BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A16258A7422008BA776 /* SceneDelegate.swift */; };
 		BCEF5A1E258A7424008BA776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1D258A7424008BA776 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		418C421D1F7CFFA43AE00923 /* Pods-DynamicTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicTable.release.xcconfig"; path = "Target Support Files/Pods-DynamicTable/Pods-DynamicTable.release.xcconfig"; sourceTree = "<group>"; };
 		A0DCB43DFC744FC80105260D /* Pods-DynamicTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicTableTests.debug.xcconfig"; path = "Target Support Files/Pods-DynamicTableTests/Pods-DynamicTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC15AEFD258B755C00A75C75 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FactSuccessResponse.json; sourceTree = "<group>"; };
+		BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListTableViewControllerTests.swift; sourceTree = "<group>"; };
 		BCEF5A11258A7422008BA776 /* DynamicTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF5A14258A7422008BA776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEF5A16258A7422008BA776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BC15AEFF258B8B2000A75C75 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		BCEF5A08258A7422008BA776 = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +153,10 @@
 		BCEF5A2A258A7425008BA776 /* DynamicTableTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC15AEFF258B8B2000A75C75 /* JSON */,
 				BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */,
 				BCEF5A2D258A7425008BA776 /* Info.plist */,
+				BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */,
 			);
 			path = DynamicTableTests;
 			sourceTree = "<group>";
@@ -290,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC15AF01258B8B5B00A75C75 /* FactSuccessResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCEF5A2C258A7425008BA776 /* DynamicTableTests.swift in Sources */,
+				BC15AF0B258BBE5A00A75C75 /* FactListTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

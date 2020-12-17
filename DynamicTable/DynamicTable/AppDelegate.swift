@@ -11,10 +11,21 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+        var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Added to add rootview controller for iOS < 13.0
+        let navController = UINavigationController(rootViewController: FactsListViewController())
+        // Create the UIWindow variable use above UIWindowScene variable.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+
+        // Set this scene's window's background color.
+        self.window!.backgroundColor = UIColor.white
+        self.window!.rootViewController =  navController
+        // Make this scene's window be visible.
+        self.window!.makeKeyAndVisible()
         return true
     }
 

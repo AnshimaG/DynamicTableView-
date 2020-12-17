@@ -9,7 +9,7 @@
 import UIKit
 
 class FactsListTableViewCell: UITableViewCell {
-  private lazy var factView = {
+   lazy var factView = {
     return FactCellView()
   }()
 
@@ -20,7 +20,7 @@ override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
   
   factView.translatesAutoresizingMaskIntoConstraints = false
   NSLayoutConstraint.activate([
-    self.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+    self.heightAnchor.constraint(greaterThanOrEqualToConstant: CGFloat(Size.image.height)),
     factView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
     factView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
     factView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
