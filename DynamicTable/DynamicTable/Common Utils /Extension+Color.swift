@@ -11,14 +11,14 @@ import UIKit
 
 // Added  color extension to set color from color asset based on dark and light theme
 enum AssetsColor {
-    case labeltextColor
+    case labelTextColor
 }
 
 extension UIColor {
     
     static func appColor(_ name: AssetsColor) -> UIColor? {
         switch name {
-        case .labeltextColor:
+        case .labelTextColor:
             return UIColor(named: "textColor")
         }
     }

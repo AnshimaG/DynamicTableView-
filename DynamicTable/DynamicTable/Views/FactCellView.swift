@@ -16,7 +16,7 @@ final class FactCellView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: Font.medium, size: 15.0)
-        label.textColor = UIColor.appColor(.labeltextColor)
+        label.textColor = UIColor.appColor(.labelTextColor)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -27,7 +27,7 @@ final class FactCellView: UIView {
         let label = UILabel()
         label.textColor = .gray
         label.font = UIFont(name: Font.neue, size: 15.0)
-        label.textColor = UIColor.appColor(.labeltextColor)        
+        label.textColor = UIColor.appColor(.labelTextColor)
         label.textAlignment = .left
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
