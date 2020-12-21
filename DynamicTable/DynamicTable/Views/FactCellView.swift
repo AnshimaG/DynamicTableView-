@@ -97,7 +97,7 @@ final class FactCellView: UIView {
     }
     
 }
-
+//MARK: Set Data in Cell
 extension FactCellView {
     func setImage(imageUrl: String?, placeHolder: String) {
         DispatchQueue.global().async { [weak self] in

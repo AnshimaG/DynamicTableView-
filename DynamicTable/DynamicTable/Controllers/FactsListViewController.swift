@@ -13,8 +13,6 @@ class FactsListViewController: UIViewController {
     var factsModel: FactModel!
     var refreshControl: UIRefreshControl?
     
-    
-    
     //MARK: Setup UI Components
     
     lazy var factsTable : UITableView = {
@@ -91,8 +89,8 @@ class FactsListViewController: UIViewController {
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
         checkNetworkConnectivity()
     }
-  
- //MARK: Rechability
+    
+    //MARK: Rechability
     func checkNetworkConnectivity() {
         let status = Reach().connectionStatus()
         
