@@ -17,17 +17,17 @@ struct ApiClient{
         
         guard let url = URL(string: url) else {
             completion( Result.failure(NetworkError.invalidUrl))
-                    return
+            return
         }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard (response as? HTTPURLResponse) != nil  else {
                 completion(Result.failure(.internetUnavailabilityError))
-              return
+                return
             }
             guard let data = data, error == nil else {
-                    completion(.failure(.dataFetchError))
+                completion(.failure(.dataFetchError))
                 return
             }
             guard let dataString = String(data: data, encoding: String.Encoding.isoLatin1) else { return }
@@ -41,5 +41,5 @@ struct ApiClient{
         }.resume()
         
     }
-
+    
 }

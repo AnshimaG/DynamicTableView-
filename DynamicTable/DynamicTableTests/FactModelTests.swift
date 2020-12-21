@@ -23,7 +23,6 @@ import XCTest
 
 class FactModelTests: XCTestCase {
     
-   // var testModel: FactModel!
     
     override func setUpWithError() throws {
         //testModel = FactModel(
@@ -31,7 +30,7 @@ class FactModelTests: XCTestCase {
     }
     
     override func tearDownWithError() throws {
-       // testModel = nil
+        // testModel = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
@@ -69,7 +68,7 @@ class FactModelTests: XCTestCase {
         XCTAssertEqual(testData?.facts?[0].title,"Housing")
         XCTAssertEqual(testData?.facts?[0].description,"Wooden")
         XCTAssertEqual(testData?.facts?[0].imageUrl,"http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
-
+        
     }
     
     func testDecodingMissingAttribute() {
@@ -83,7 +82,7 @@ class FactModelTests: XCTestCase {
         let testData  = try? decoder.decode(FactModel.self, from: json)
         XCTAssertNil(testData?.facts)
     }
-
+    
     func testDecodableWithEmptyArray() throws {
         // Given
         let json = Data("""
@@ -131,5 +130,5 @@ class FactModelTests: XCTestCase {
         XCTAssertNil(testData?.facts?[0].description)
         XCTAssertNil(testData?.facts?[0].imageUrl)
     }
-
+    
 }

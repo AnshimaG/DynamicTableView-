@@ -13,26 +13,32 @@ struct ApiEndPoints{
     
 }
 
+struct CellIdentifier{
+    static let factViewCellIdentifier = "FactsCell"
+}
+
 enum Font {
-  static let neue     = "Helvetica Neue"
-  static let medium   = "HelveticaNeue-Medium"
-  static let regular  = "HelveticaNeue-Regular"
+    static let neue     = "Helvetica Neue"
+    static let medium   = "HelveticaNeue-Medium"
+    static let regular  = "HelveticaNeue-Regular"
 }
 
 enum Size {
-  static let image = (width: Float(120), height: Float(120))
+    static let image = (width: Float(120), height: Float(120))
 }
 
 enum Message {
-  static let initialLoading = "Please wait..."
-  static let pullToRefresh = "Fetching"
-  static let internetConnectivity = "Please check your internet connection"
+    static let initialLoading = "Please wait..."
+    static let pullToRefresh = "Fetching"
+    static let internetConnectivity = "Please check your internet connection"
+    static let noDataAvailable = "No data available"
+    
 }
 
 enum Height {
-  static let factTableEstimated: Float = 100
-  static let factTableCellMinimum: Float = 100
-  static let margin: Float = 8
+    static let factTableEstimated: Float = 100
+    static let factTableCellMinimum: Float = 100
+    static let margin: Float = 8
 }
 
 //Error Handling
@@ -45,16 +51,16 @@ enum NetworkError : Error {
     
     
     var reason: String {
-    switch self {
-    case .internetUnavailabilityError:
-      return "No Internet connection, \n Please check connectivity"
-    case .decodingError:
-      return "An error occurred while decoding data \n Please try again"
-    case .invalidUrl:
-      return "invalid url"
-    case .dataFetchError:
-        return "Error while fetching data"
+        switch self {
+        case .internetUnavailabilityError:
+            return "No Internet connection, \n Please check connectivity"
+        case .decodingError:
+            return "An error occurred while decoding data \n Please try again"
+        case .invalidUrl:
+            return "invalid url"
+        case .dataFetchError:
+            return "Error while fetching data"
         }
- }
+    }
 }
 

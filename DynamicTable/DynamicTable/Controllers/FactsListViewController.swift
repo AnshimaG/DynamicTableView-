@@ -9,32 +9,32 @@
 import UIKit
 
 class FactsListViewController: UIViewController {
-   var viewModel: FactsViewModel!
-   var factsModel: FactModel!
-   var refreshControl: UIRefreshControl?
-
-
-
-//MARK: Setup UI Components
+    var viewModel: FactsViewModel!
+    var factsModel: FactModel!
+    var refreshControl: UIRefreshControl?
     
-     lazy var factsTable : UITableView = {
+    
+    
+    //MARK: Setup UI Components
+    
+    lazy var factsTable : UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.estimatedRowHeight = CGFloat(Height.factTableEstimated)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView(frame: .zero)
-
+        
         return tableView
     }()
     
     lazy var messageLabel : UILabel = {
-      let label = UILabel()
-      label.textColor = .gray
-      label.font = UIFont(name: Font.regular, size: 18)
-      label.textAlignment = .center
-      label.numberOfLines = 0
-      label.sizeToFit()
-      return label
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont(name: Font.regular, size: 18)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.sizeToFit()
+        return label
     }()
     
     override func viewDidLoad() {
@@ -57,8 +57,8 @@ class FactsListViewController: UIViewController {
         
         //hide  refreshControl, when response is received
         viewModel.updateRefreshControl = { [weak self] () in
-          guard let self = self, let refreshControl = self.refreshControl else { return }
-          refreshControl.endRefreshing()
+            guard let self = self, let refreshControl = self.refreshControl else { return }
+            refreshControl.endRefreshing()
         }
         
     }
@@ -73,8 +73,8 @@ class FactsListViewController: UIViewController {
         factsTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         factsTable.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         factsTable.refreshControl = refreshControl
-
-
+        
+        
     }
     
     private func setUpEmptyOrErrorLabel() {
@@ -91,35 +91,37 @@ class FactsListViewController: UIViewController {
     @objc func refreshData(_ refreshControl: UIRefreshControl) {
         checkNetworkConnectivity()
     }
-    
+  
+ //MARK: Rechability
     func checkNetworkConnectivity() {
         let status = Reach().connectionStatus()
-    
+        
         switch status {
         case .unknown, .offline:
-           factsTable.backgroundView = messageLabel
-           messageLabel.text = Message.internetConnectivity
+            factsTable.backgroundView = messageLabel
+            messageLabel.text = Message.internetConnectivity
         default:
             viewModel.getFactsData()
         }
-
+        
     }
-
+    
 }
 
+//MARK: UITableViewDatasource
 extension FactsListViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return factsModel?.facts?.count ?? 0
+        return factsModel?.facts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FactsCell", for: indexPath) as! FactsListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifier.factViewCellIdentifier, for: indexPath) as! FactsListTableViewCell
         cell.layoutMargins = UIEdgeInsets.zero
         cell.selectionStyle = .none
         cell.facts = factsModel?.facts?[indexPath.row]
-
+        
         return cell
     }
 }
@@ -142,6 +144,6 @@ extension FactsListViewController: DataFetchProtocol {
         messageLabel.text = reason
         
     }
-  
-  
+    
+    
 }

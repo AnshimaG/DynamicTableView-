@@ -53,7 +53,7 @@ class FactListTableViewControllerTests: XCTestCase {
     func testTableViewCellHasReuseIdentifier() {
         let cell = controller.tableView(controller.factsTable, cellForRowAt: IndexPath(row: 0, section: 0)) as? FactsListTableViewCell
         let actualReuseIdentifer = cell?.reuseIdentifier
-        let expectedReuseIdentifier = "FactsCell"
+        let expectedReuseIdentifier = CellIdentifier.factViewCellIdentifier
         XCTAssertEqual(actualReuseIdentifer, expectedReuseIdentifier)
     }
     

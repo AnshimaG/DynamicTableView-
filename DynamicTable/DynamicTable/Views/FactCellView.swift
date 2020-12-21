@@ -16,6 +16,7 @@ final class FactCellView: UIView {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont(name: Font.medium, size: 15.0)
+        label.textColor = UIColor.appColor(.labeltextColor)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -23,22 +24,23 @@ final class FactCellView: UIView {
     }()
     
     private lazy var descriptionLabel : UILabel = {
-      let label = UILabel()
-      label.textColor = .gray
+        let label = UILabel()
+        label.textColor = .gray
         label.font = UIFont(name: Font.neue, size: 15.0)
-      label.textAlignment = .left
-      label.numberOfLines = 0
-      label.translatesAutoresizingMaskIntoConstraints = false
-      return label
+        label.textColor = UIColor.appColor(.labeltextColor)        
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private lazy var imageView : UIImageView = {
-      let imageView = UIImageView()
-      imageView.contentMode = .scaleAspectFill
-      imageView.layer.masksToBounds = true
-      imageView.clipsToBounds = true
-      imageView.translatesAutoresizingMaskIntoConstraints = false
-      return imageView
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     // Adding title and description label in vertical stack view
@@ -54,25 +56,25 @@ final class FactCellView: UIView {
     
     // Adding Image view and Verticalstack view in a horizontal stack view to arrange components side by side
     lazy var stackView: UIStackView = {
-      let stackView = UIStackView(
-        arrangedSubviews: [self.imageView, self.verticalTextStackView]
-      )
-      stackView.axis = .horizontal
+        let stackView = UIStackView(
+            arrangedSubviews: [self.imageView, self.verticalTextStackView]
+        )
+        stackView.axis = .horizontal
         stackView.spacing = CGFloat(2 * Height.margin)
-      stackView.alignment = .top
-      stackView.distribution = .fill
-      stackView.translatesAutoresizingMaskIntoConstraints = false
-      return stackView
+        stackView.alignment = .top
+        stackView.distribution = .fill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
     
     private func addSubviews() {
-         addSubview(stackView)
-         setupConstraints()
+        addSubview(stackView)
+        setupConstraints()
     }
     
     // Add constraints
-   private func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: CGFloat(Size.image.width)),
             imageView.heightAnchor.constraint(equalToConstant: CGFloat(Size.image.height)),
@@ -83,42 +85,42 @@ final class FactCellView: UIView {
         ])
     }
     
-   // MARK: Init
-      override init (frame: CGRect) {
-          super.init(frame: frame)
-          addSubviews()
-      }
-
-      required init?(coder aDecoder: NSCoder) {
-          super.init(coder: aDecoder)
-          addSubviews()
-      }
-
+    // MARK: Init
+    override init (frame: CGRect) {
+        super.init(frame: frame)
+        addSubviews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addSubviews()
+    }
+    
 }
 
 extension FactCellView {
-     func setImage(imageUrl: String?, placeHolder: String) {
-       DispatchQueue.global().async { [weak self] in
-         guard let self  = self else { return }
-         self.imageView.sd_setImage(with: URL(string: imageUrl ?? ""), placeholderImage: UIImage(named: "placeholder"))
-       }
-     }
-     
-     var titleText: String? {
-       get {
-         return titleLabel.text
-       }
-       set {
-         titleLabel.text = newValue
-       }
-     }
-     
-     var descriptionText: String? {
-       get {
-         return descriptionLabel.text
-       }
-       set {
-         descriptionLabel.text = newValue
-       }
-     }
-   }
+    func setImage(imageUrl: String?, placeHolder: String) {
+        DispatchQueue.global().async { [weak self] in
+            guard let self  = self else { return }
+            self.imageView.sd_setImage(with: URL(string: imageUrl ?? ""), placeholderImage: UIImage(named: "placeholder"))
+        }
+    }
+    
+    var titleText: String? {
+        get {
+            return titleLabel.text
+        }
+        set {
+            titleLabel.text = newValue
+        }
+    }
+    
+    var descriptionText: String? {
+        get {
+            return descriptionLabel.text
+        }
+        set {
+            descriptionLabel.text = newValue
+        }
+    }
+}

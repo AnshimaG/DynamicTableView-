@@ -10,8 +10,8 @@ import Foundation
 
 /// Protocol added to pass data from ViewModel to Controller class
 protocol DataFetchProtocol: class {
-  func onDataFetchSuccessfullyCompleted(with result: FactModel)
-  func onDataFetchFailed(with reason: String)
+    func onDataFetchSuccessfullyCompleted(with result: FactModel)
+    func onDataFetchFailed(with reason: String)
 }
 class FactsViewModel  {
     
@@ -21,49 +21,36 @@ class FactsViewModel  {
     var updateRefreshControl: (() -> Void)?
     
     init(delegate: DataFetchProtocol) {
-      self.delegate = delegate
+        self.delegate = delegate
     }
     var navTitle: String? {
-      didSet {
-        updateNavigationTitle?()
-      }
+        didSet {
+            updateNavigationTitle?()
+        }
     }
     
 }
-    
-    //MARK: - View Model to API Client
-    
+
+//MARK: - View Model to API Client
+
 extension FactsViewModel {
-        
+    
     /// This method  calls the api func available in ApiClient class  to fetch data data from api and binds it back to controller class
     func getFactsData()  {
         ApiClient().fetchData(url: ApiEndPoints.factApiUrl) { [weak self](response:Result<FactModel,NetworkError>) in
-                guard let self = self else { return }
-                DispatchQueue.main.async {
+            guard let self = self else { return }            
+            DispatchQueue.main.async {
                 self.updateRefreshControl?()
                 switch response{
-                   case .success(let factsList):
-                        print(factsList)
-                        self.navTitle = factsList.heading ?? ""
-                        let processedResult = self.checkForNilValues(result: factsList)
-                        self.delegate?.onDataFetchSuccessfullyCompleted(with: processedResult)
-                    case .failure(let err):
-                        self.delegate?.onDataFetchFailed(with: err.reason)
+                case .success(let factsList):
+                    print(factsList)
+                    self.navTitle = factsList.heading ?? ""
+                    self.delegate?.onDataFetchSuccessfullyCompleted(with: factsList)
+                case .failure(let err):
+                    self.delegate?.onDataFetchFailed(with: err.reason)
                 }
             }
-           }
+        }
     }
-
-    /// Check for nil values available in  api response
-    /// - Parameter result: Factmodel object
-    /// - Returns: [Fatcts ] after nil values removal
-        
-    func checkForNilValues(result: FactModel) -> FactModel {
-            let pageHeading = result.heading ?? ""
-            guard let facts = result.facts else { return result }
-            let filteredFacts = facts.filter({ $0.title != nil })
-            return FactModel(title: pageHeading, facts: filteredFacts)
-    }
-
-   
+    
 }
