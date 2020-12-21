@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		269F59EDF6136CE7FA598A26 /* Pods_DynamicTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24FBFDA26F4A5338C246CB5A /* Pods_DynamicTableTests.framework */; };
 		BC15AEFE258B755C00A75C75 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15AEFD258B755C00A75C75 /* Reach.swift */; };
-		BC15AF01258B8B5B00A75C75 /* FactSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */; };
-		BC15AF0B258BBE5A00A75C75 /* FactListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */; };
+		BC15AF322590E8E600A75C75 /* DynamicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC15AF312590E8E600A75C75 /* DynamicTableTests.swift */; };
+		BC50201D2590F5020006EA11 /* FactListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC50201C2590F5020006EA11 /* FactListTableViewControllerTests.swift */; };
+		BC5020202590F7150006EA11 /* TestFactData.json in Resources */ = {isa = PBXBuildFile; fileRef = BC50201F2590F7150006EA11 /* TestFactData.json */; };
+		BC5020242590F7800006EA11 /* FactModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5020232590F7800006EA11 /* FactModelTests.swift */; };
 		BCEF5A15258A7422008BA776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A14258A7422008BA776 /* AppDelegate.swift */; };
 		BCEF5A17258A7422008BA776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A16258A7422008BA776 /* SceneDelegate.swift */; };
 		BCEF5A1E258A7424008BA776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1D258A7424008BA776 /* Assets.xcassets */; };
 		BCEF5A21258A7424008BA776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCEF5A1F258A7424008BA776 /* LaunchScreen.storyboard */; };
-		BCEF5A2C258A7425008BA776 /* DynamicTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */; };
 		BCEF5A38258A7802008BA776 /* FactsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A37258A7802008BA776 /* FactsListViewController.swift */; };
 		BCEF5A3B258A79F8008BA776 /* FactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3A258A79F8008BA776 /* FactsModel.swift */; };
 		BCEF5A3E258A7B58008BA776 /* FactsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BCEF5A28258A7425008BA776 /* PBXContainerItemProxy */ = {
+		BC15AF342590E8E600A75C75 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCEF5A09258A7422008BA776 /* Project object */;
 			proxyType = 1;
@@ -44,17 +44,18 @@
 		418C421D1F7CFFA43AE00923 /* Pods-DynamicTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicTable.release.xcconfig"; path = "Target Support Files/Pods-DynamicTable/Pods-DynamicTable.release.xcconfig"; sourceTree = "<group>"; };
 		A0DCB43DFC744FC80105260D /* Pods-DynamicTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicTableTests.debug.xcconfig"; path = "Target Support Files/Pods-DynamicTableTests/Pods-DynamicTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC15AEFD258B755C00A75C75 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
-		BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FactSuccessResponse.json; sourceTree = "<group>"; };
-		BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		BC15AF2F2590E8E600A75C75 /* DynamicTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC15AF312590E8E600A75C75 /* DynamicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableTests.swift; sourceTree = "<group>"; };
+		BC15AF332590E8E600A75C75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC50201C2590F5020006EA11 /* FactListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		BC50201F2590F7150006EA11 /* TestFactData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestFactData.json; sourceTree = "<group>"; };
+		BC5020232590F7800006EA11 /* FactModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactModelTests.swift; sourceTree = "<group>"; };
 		BCEF5A11258A7422008BA776 /* DynamicTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEF5A14258A7422008BA776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCEF5A16258A7422008BA776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BCEF5A1D258A7424008BA776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCEF5A20258A7424008BA776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCEF5A22258A7424008BA776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BCEF5A27258A7425008BA776 /* DynamicTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableTests.swift; sourceTree = "<group>"; };
-		BCEF5A2D258A7425008BA776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCEF5A37258A7802008BA776 /* FactsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListViewController.swift; sourceTree = "<group>"; };
 		BCEF5A3A258A79F8008BA776 /* FactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsModel.swift; sourceTree = "<group>"; };
 		BCEF5A3D258A7B58008BA776 /* FactsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,19 +66,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BC15AF2C2590E8E600A75C75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCEF5A0E258A7422008BA776 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D728D3A6E5FB093B3AC403A1 /* Pods_DynamicTable.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCEF5A24258A7425008BA776 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				269F59EDF6136CE7FA598A26 /* Pods_DynamicTableTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +104,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		BC15AEFF258B8B2000A75C75 /* JSON */ = {
+		BC15AF302590E8E600A75C75 /* DynamicTableTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC15AF00258B8B5B00A75C75 /* FactSuccessResponse.json */,
+				BC50201E2590F7040006EA11 /* JSON */,
+				BC15AF312590E8E600A75C75 /* DynamicTableTests.swift */,
+				BC15AF332590E8E600A75C75 /* Info.plist */,
+				BC50201C2590F5020006EA11 /* FactListTableViewControllerTests.swift */,
+				BC5020232590F7800006EA11 /* FactModelTests.swift */,
+			);
+			path = DynamicTableTests;
+			sourceTree = "<group>";
+		};
+		BC50201E2590F7040006EA11 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BC50201F2590F7150006EA11 /* TestFactData.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -116,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BCEF5A13258A7422008BA776 /* DynamicTable */,
-				BCEF5A2A258A7425008BA776 /* DynamicTableTests */,
+				BC15AF302590E8E600A75C75 /* DynamicTableTests */,
 				BCEF5A12258A7422008BA776 /* Products */,
 				AE3C48BB3FA62478ED013F78 /* Pods */,
 				2A835BE06D5947EF908A2785 /* Frameworks */,
@@ -127,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				BCEF5A11258A7422008BA776 /* DynamicTable.app */,
-				BCEF5A27258A7425008BA776 /* DynamicTableTests.xctest */,
+				BC15AF2F2590E8E600A75C75 /* DynamicTableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,17 +160,6 @@
 				BCEF5A22258A7424008BA776 /* Info.plist */,
 			);
 			path = DynamicTable;
-			sourceTree = "<group>";
-		};
-		BCEF5A2A258A7425008BA776 /* DynamicTableTests */ = {
-			isa = PBXGroup;
-			children = (
-				BC15AEFF258B8B2000A75C75 /* JSON */,
-				BCEF5A2B258A7425008BA776 /* DynamicTableTests.swift */,
-				BCEF5A2D258A7425008BA776 /* Info.plist */,
-				BC15AF0A258BBE5A00A75C75 /* FactListTableViewControllerTests.swift */,
-			);
-			path = DynamicTableTests;
 			sourceTree = "<group>";
 		};
 		BCEF5A36258A77E6008BA776 /* Controllers */ = {
@@ -214,6 +215,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BC15AF2E2590E8E600A75C75 /* DynamicTableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC15AF362590E8E600A75C75 /* Build configuration list for PBXNativeTarget "DynamicTableTests" */;
+			buildPhases = (
+				BC15AF2B2590E8E600A75C75 /* Sources */,
+				BC15AF2C2590E8E600A75C75 /* Frameworks */,
+				BC15AF2D2590E8E600A75C75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC15AF352590E8E600A75C75 /* PBXTargetDependency */,
+			);
+			name = DynamicTableTests;
+			productName = DynamicTableTests;
+			productReference = BC15AF2F2590E8E600A75C75 /* DynamicTableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BCEF5A10258A7422008BA776 /* DynamicTable */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCEF5A30258A7425008BA776 /* Build configuration list for PBXNativeTarget "DynamicTable" */;
@@ -233,25 +252,6 @@
 			productReference = BCEF5A11258A7422008BA776 /* DynamicTable.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BCEF5A26258A7425008BA776 /* DynamicTableTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BCEF5A33258A7425008BA776 /* Build configuration list for PBXNativeTarget "DynamicTableTests" */;
-			buildPhases = (
-				D2401C6B19E9FCBAB3AF2B78 /* [CP] Check Pods Manifest.lock */,
-				BCEF5A23258A7425008BA776 /* Sources */,
-				BCEF5A24258A7425008BA776 /* Frameworks */,
-				BCEF5A25258A7425008BA776 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BCEF5A29258A7425008BA776 /* PBXTargetDependency */,
-			);
-			name = DynamicTableTests;
-			productName = DynamicTableTests;
-			productReference = BCEF5A27258A7425008BA776 /* DynamicTableTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,12 +262,12 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Ankita ";
 				TargetAttributes = {
-					BCEF5A10258A7422008BA776 = {
-						CreatedOnToolsVersion = 11.6;
-					};
-					BCEF5A26258A7425008BA776 = {
+					BC15AF2E2590E8E600A75C75 = {
 						CreatedOnToolsVersion = 11.6;
 						TestTargetID = BCEF5A10258A7422008BA776;
+					};
+					BCEF5A10258A7422008BA776 = {
+						CreatedOnToolsVersion = 11.6;
 					};
 				};
 			};
@@ -285,26 +285,26 @@
 			projectRoot = "";
 			targets = (
 				BCEF5A10258A7422008BA776 /* DynamicTable */,
-				BCEF5A26258A7425008BA776 /* DynamicTableTests */,
+				BC15AF2E2590E8E600A75C75 /* DynamicTableTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BC15AF2D2590E8E600A75C75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC5020202590F7150006EA11 /* TestFactData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCEF5A0F258A7422008BA776 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BCEF5A21258A7424008BA776 /* LaunchScreen.storyboard in Resources */,
 				BCEF5A1E258A7424008BA776 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BCEF5A25258A7425008BA776 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BC15AF01258B8B5B00A75C75 /* FactSuccessResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,31 +350,19 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DynamicTable/Pods-DynamicTable-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2401C6B19E9FCBAB3AF2B78 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DynamicTableTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BC15AF2B2590E8E600A75C75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC15AF322590E8E600A75C75 /* DynamicTableTests.swift in Sources */,
+				BC5020242590F7800006EA11 /* FactModelTests.swift in Sources */,
+				BC50201D2590F5020006EA11 /* FactListTableViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCEF5A0D258A7422008BA776 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,22 +380,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BCEF5A23258A7425008BA776 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BCEF5A2C258A7425008BA776 /* DynamicTableTests.swift in Sources */,
-				BC15AF0B258BBE5A00A75C75 /* FactListTableViewControllerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BCEF5A29258A7425008BA776 /* PBXTargetDependency */ = {
+		BC15AF352590E8E600A75C75 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BCEF5A10258A7422008BA776 /* DynamicTable */;
-			targetProxy = BCEF5A28258A7425008BA776 /* PBXContainerItemProxy */;
+			targetProxy = BC15AF342590E8E600A75C75 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -423,6 +402,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BC15AF372590E8E600A75C75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DynamicTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ankita.DynamicTableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTable.app/DynamicTable";
+			};
+			name = Debug;
+		};
+		BC15AF382590E8E600A75C75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DynamicTableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ankita.DynamicTableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTable.app/DynamicTable";
+			};
+			name = Release;
+		};
 		BCEF5A2E258A7425008BA776 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -575,53 +592,18 @@
 			};
 			name = Release;
 		};
-		BCEF5A34258A7425008BA776 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0DCB43DFC744FC80105260D /* Pods-DynamicTableTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DynamicTableTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ankita.DynamicTableTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTable.app/DynamicTable";
-			};
-			name = Debug;
-		};
-		BCEF5A35258A7425008BA776 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07A0209B28D707988E9136A8 /* Pods-DynamicTableTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DynamicTableTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ankita.DynamicTableTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTable.app/DynamicTable";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BC15AF362590E8E600A75C75 /* Build configuration list for PBXNativeTarget "DynamicTableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC15AF372590E8E600A75C75 /* Debug */,
+				BC15AF382590E8E600A75C75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BCEF5A0C258A7422008BA776 /* Build configuration list for PBXProject "DynamicTable" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -636,15 +618,6 @@
 			buildConfigurations = (
 				BCEF5A31258A7425008BA776 /* Debug */,
 				BCEF5A32258A7425008BA776 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BCEF5A33258A7425008BA776 /* Build configuration list for PBXNativeTarget "DynamicTableTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BCEF5A34258A7425008BA776 /* Debug */,
-				BCEF5A35258A7425008BA776 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,9 +9,8 @@
 import XCTest
 @testable import DynamicTable
 
-
 class FactListTableViewControllerTests: XCTestCase {
-
+    
     var controller: FactsListViewController!
     var navController : UINavigationController!
     
@@ -21,32 +20,36 @@ class FactListTableViewControllerTests: XCTestCase {
         controller.loadViewIfNeeded()
         navController = UINavigationController(rootViewController: controller)
     }
-
+    
     override func tearDownWithError() throws {
         controller = nil
         navController = nil
     }
+    
     func testRootViewController() {
-
+        
         let window = UIWindow()
         window.rootViewController = navController
         window.makeKeyAndVisible()
         XCTAssert(window.rootViewController is UINavigationController)
         XCTAssert(navController.topViewController is FactsListViewController)
     }
+    
     func testTableIsSetUp(){
         XCTAssertNotNil(controller.factsTable)
     }
+    
     func testLoadViewSetsTableDataSource(){
         XCTAssertTrue(controller.factsTable.dataSource is FactsListViewController)
-
+        
     }
     
-    func test_TableHasOneSection() {
+    func testTableHasOneSection() {
         let numberOfSections = controller.factsTable.numberOfSections
         
         XCTAssertEqual(1, numberOfSections)
     }
+    
     func testTableViewCellHasReuseIdentifier() {
         let cell = controller.tableView(controller.factsTable, cellForRowAt: IndexPath(row: 0, section: 0)) as? FactsListTableViewCell
         let actualReuseIdentifer = cell?.reuseIdentifier
